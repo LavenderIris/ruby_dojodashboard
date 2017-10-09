@@ -2,6 +2,10 @@
 <style type="text/css">
 	table, th, tr, th, td {
 		border: 1px solid black;
+		padding: 0px 5px;
+	}
+	form {
+		display: inline-block;
 	}
 </style>
 <h1>Listing All Dojos</h1>
@@ -11,6 +15,7 @@
 		<th>Street</th>
 		<th>City</th>
 		<th>State</th>
+		<th>Actions</th>
 	</tr>
 	
 	<% @dojos.each do |dojo| %>
@@ -20,7 +25,13 @@
 		<td><%= dojo.street %></td>
 		<td><%= dojo.city %></td>
 		<td><%= dojo.state %></td>
+		<td>
+			<a href="/dojos/<%=dojo.id%>">Show</a> | 
+			<a href="/dojos/<%=dojo.id%>/edit">Edit</a> |
+			<%= link_to "Delete", "/dojos/"+dojo.id.to_s, data: { method: :delete, confirm: "Are you sure?" } %>
 
+
+		</td>
 	</tr>
 	<% end %>	
 
