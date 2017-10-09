@@ -1,0 +1,28 @@
+
+<style type="text/css">
+	table, th, tr, th, td {
+		border: 1px solid black;
+	}
+</style>
+<h1>Listing All Dojos</h1>
+<table>
+	<tr>
+		<th>Coding Dojo Branch</th>
+		<th>Street</th>
+		<th>City</th>
+		<th>State</th>
+	</tr>
+	
+	<% @dojos.each do |d| %>
+
+	<tr>
+		<td><%= d.branch %></td>
+		<td><%= d.street %></td>
+		<td><%= d.city %></td>
+		<td><%= d.state %></td>
+
+	</tr>
+	<% end %>
+
+</table>
+
